@@ -1,0 +1,37 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:tb="http://www.hardcodet.net/taskbar"
+                    xmlns:local="clr-namespace:CleverBar">
+
+
+
+    <tb:TaskbarIcon 
+        x:Key="TrayIcon"
+        LeftClickCommand="{Binding ToggleAutoHideTaskbar}">
+        <tb:TaskbarIcon.ContextMenu>
+            <ContextMenu>
+                <!--<MenuItem Header="关于" Command="{Binding AboutApplication}"/>
+                <Separator/>-->
+                <MenuItem Header="退出" Command="{Binding ExitApplication}"/>
+            </ContextMenu>
+        </tb:TaskbarIcon.ContextMenu>
+        <tb:TaskbarIcon.Style>
+            <Style TargetType="tb:TaskbarIcon">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding AutoHide}" Value="true">
+                        <Setter Property="IconSource" Value="Icon/checked.ico"/>
+                        <Setter Property="ToolTipText" Value="任务栏已开启自动隐藏"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding AutoHide}" Value="false">
+                        <Setter Property="IconSource" Value="Icon/unchecked.ico"/>
+                        <Setter Property="ToolTipText" Value="任务栏已关闭自动隐藏"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </tb:TaskbarIcon.Style>
+        <tb:TaskbarIcon.DataContext>
+            <local:MainViewModel/>
+        </tb:TaskbarIcon.DataContext>
+    </tb:TaskbarIcon>
+
+</ResourceDictionary>
