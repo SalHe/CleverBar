@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CleverBar
 {
-    internal interface ITaskBarAutoHider
+    public interface ITaskBarAutoHider
     {
 
         bool IsAutoHideMode();

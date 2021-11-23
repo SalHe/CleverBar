@@ -30,7 +30,7 @@
             </Style>
         </tb:TaskbarIcon.Style>
         <tb:TaskbarIcon.DataContext>
-            <local:MainViewModel/>
+            <local:TrayIconViewModel/>
         </tb:TaskbarIcon.DataContext>
     </tb:TaskbarIcon>
 

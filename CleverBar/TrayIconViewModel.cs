@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace CleverBar
 {
-    public class MainViewModel : ReactiveObject
+    public class TrayIconViewModel : ReactiveObject
     {
 
         private ITaskBarAutoHider _taskBarAutoHider;
@@ -34,10 +34,14 @@ namespace CleverBar
 
         #endregion
 
-        public MainViewModel()
+        public TrayIconViewModel()
         {
-            // TODO 使用依赖注入方式解决实际的控制对象
-            _taskBarAutoHider = new WinTaskBarAutoHider();
+            // TODO 考虑看一下能不能移除无参构造函数，又能和Xaml构造TaskbarIcon需要无参构造器不冲突
+        }
+        
+        public TrayIconViewModel(ITaskBarAutoHider taskBarAutoHider)
+        {
+            _taskBarAutoHider = taskBarAutoHider;
 
             AutoHide = _taskBarAutoHider.IsAutoHideMode();
             ToggleAutoHideTaskbar = ReactiveCommand.Create(() =>
