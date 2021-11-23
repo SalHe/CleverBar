@@ -5,6 +5,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Icon\unchecked.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,10 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Icon\checked.ico">
+    <Resource Include="Icon\unchecked.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Icon\unchecked.ico">
+    <Resource Include="Icon\checked.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
