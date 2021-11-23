@@ -34,7 +34,7 @@ namespace CleverBar
 
         #endregion
 
-        public TrayIconViewModel()
+        public TrayIconViewModel() : this(null)
         {
             // TODO 考虑看一下能不能移除无参构造函数，又能和Xaml构造TaskbarIcon需要无参构造器不冲突
         }
