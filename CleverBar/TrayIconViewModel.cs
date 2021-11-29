@@ -34,11 +34,11 @@ namespace CleverBar
 
         #endregion
 
-        public TrayIconViewModel() : this(null)
+        public TrayIconViewModel()
         {
             // TODO 考虑看一下能不能移除无参构造函数，又能和Xaml构造TaskbarIcon需要无参构造器不冲突
         }
-        
+
         public TrayIconViewModel(ITaskBarAutoHider taskBarAutoHider)
         {
             _taskBarAutoHider = taskBarAutoHider;
