@@ -56,7 +56,7 @@ namespace CleverBar
             AboutApplication = ReactiveCommand.Create(() =>
             {
                 MessageBox.Show("一个快速在托盘切换是否自动隐藏任务栏的小工具！", "CleverBar by SalHe",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
             });
             ExitApplication = ReactiveCommand.Create(() => Application.Current.Shutdown());
         }
